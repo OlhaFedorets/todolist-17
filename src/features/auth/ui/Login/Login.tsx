@@ -13,10 +13,7 @@ import Grid from "@mui/material/Grid2"
 import TextField from "@mui/material/TextField"
 import {Controller, type SubmitHandler, useForm} from "react-hook-form"
 import styles from "./Login.module.css"
-import {loginTC, selectIsLoggedIn} from "@/features/auth/model/auth-slice.ts";
-import {useNavigate} from "react-router";
-import {Path} from "@/common/routing";
-import {useEffect} from "react";
+import {loginTC} from "@/features/auth/model/auth-slice.ts";
 
 
 export const Login = () => {
@@ -24,11 +21,11 @@ export const Login = () => {
     const dispatch = useAppDispatch()
 
     const themeMode = useAppSelector(selectThemeMode)
-    const isLoggedIn = useAppSelector(selectIsLoggedIn)
+    // const isLoggedIn = useAppSelector(selectIsLoggedIn)
 
     const theme = getTheme(themeMode)
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const {
         register,
@@ -52,11 +49,11 @@ export const Login = () => {
     // }
 
     // 2 variant
-    useEffect(() => {
-        if (isLoggedIn) {
-            navigate(Path.Main)
-        }
-    }, [isLoggedIn]);
+    // useEffect(() => {
+    //     if (isLoggedIn) {
+    //         navigate(Path.Main)
+    //     }
+    // }, [isLoggedIn]);
 
 
 
