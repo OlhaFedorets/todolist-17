@@ -24,9 +24,10 @@ export const App = () => {
         dispatch(meTC()).finally(() => {
             setIsInit(true)
         })
-        dispatch(meTC()).unwrap().then(() => {
-            setIsInit(true)
-        })
+        // 2 вариант
+        // dispatch(meTC()).unwrap().then(() => {
+        //     setIsInit(true)
+        // })
     })
 
     if (!isInit) {
